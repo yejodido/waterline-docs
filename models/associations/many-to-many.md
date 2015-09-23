@@ -21,7 +21,7 @@ to know which side it can write the joinTable to in the case of different connec
 Using the `User` and `Pet` example lets look at how to build a schema where a `User` may have many
 `Pet` records and a `Pet` may have multiple owners.
 
-```javascript
+{% highlight javascript %}
 // A user may have many pets
 var User = Waterline.Collection.extend({
 
@@ -59,7 +59,7 @@ var Pet = Waterline.Collection.extend({
     }
   }
 });
-```
+{% endhighlight %}
 
 Now that the `User` and `Pet` models have been created and the join table has been setup
 automatically, we can start associating records and querying the join table. To do this lets add a
@@ -77,7 +77,7 @@ will be used in the new join table record. You can also use an array of previous
 
 ## When Both Records Exist
 
-```javascript
+{% highlight javascript %}
 // Given a User with ID 2 and a Pet with ID 20
 
 User.findOne(2).exec(function(err, user) {
@@ -89,11 +89,11 @@ User.findOne(2).exec(function(err, user) {
   // Save the user, creating the new associations in the join table
   user.save(function(err) {});
 });
-```
+{% endhighlight %}
 
 ## With A New Record
 
-```javascript
+{% highlight javascript %}
 User.findOne(2).exec(function(err, user) {
   if(err) // handle error
 
@@ -103,11 +103,11 @@ User.findOne(2).exec(function(err, user) {
   // Save the user, creating the new pet and associations in the join table
   user.save(function(err) {});
 });
-```
+{% endhighlight %}
 
 ## With An Array of New Record
 
-```javascript
+{% highlight javascript %}
 // Given a User with ID 2 and a Pet with ID 20, 24, 31
 
 User.findOne(2).exec(function(err, user) {
@@ -119,12 +119,12 @@ User.findOne(2).exec(function(err, user) {
   // Save the user, creating the new pet and associations in the join table
   user.save(function(err) {});
 });
-```
+{% endhighlight %}
 
 Removing associations is just as easy using the `remove` method. It works the same as the `add`
 method except it only accepts primary keys as a value. The two methods can be used together as well.
 
-```javascript
+{% highlight javascript %}
 User.findOne(2).exec(function(err, user) {
   if(err) // handle error
 
@@ -137,4 +137,4 @@ User.findOne(2).exec(function(err, user) {
   // Save the user, creating the new pet and syncing the associations in the join table
   user.save(function(err) {});
 });
-```
+{% endhighlight %}

@@ -42,7 +42,7 @@ The adapter boilerplate code includes a
 which will run these tests for you requiring you only to setup the interfaces you plan to support 
 (and targeted version of Waterline) in the adapter's `package.json` file:
 
-```javascript
+{% highlight javascript %}
 {
   //...
   "sailsAdapter": {
@@ -54,13 +54,13 @@ which will run these tests for you requiring you only to setup the interfaces yo
     ]
   }
 }
-```
+{% endhighlight %}
 
 In your adapter's directory, run:
 
-```sh
+{% highlight bash %}
 $ npm test
-```
+{% endhighlight %}
 
 
 ## Other References
