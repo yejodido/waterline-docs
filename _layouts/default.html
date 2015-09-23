@@ -70,6 +70,10 @@
         });
       }
     });
+
+    $(function() {
+      $('div.list-group a[href^="/' + location.pathname.split("/")[1] + '"]').addClass('active');
+    });
   </script>
 </head>
 <body>
@@ -135,7 +139,7 @@
     <div class="col-md-2" id="sidebar">
 
       <div class="list-group">
-        <a href="/introduction/introduction.html" class="active list-group-item">
+        <a href="/introduction/introduction.html" class="list-group-item">
           Introduction
         </a>
         <a href="/models/models.html" class="list-group-item">
