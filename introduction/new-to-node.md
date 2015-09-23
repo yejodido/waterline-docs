@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # New to [Node.js](https://soundcloud.com/marak/marak-the-node-js-rap)?
 
 That's okay!  We'll get you pointed in the right direction.

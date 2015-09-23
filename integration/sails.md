@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Integrating Waterline in Sails.js
 
 ## Notes for models

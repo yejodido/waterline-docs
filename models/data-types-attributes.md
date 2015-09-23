@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Data Types and Attribute Properties in Waterline Models
 
 ## Data Types

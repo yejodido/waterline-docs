@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Many-to-Many Through Associations
 
 Many-to-Many through associations behave the same way as many-to-many associations with the exception

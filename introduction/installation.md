@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Waterline Installation
 
 Waterline is available via NPM.

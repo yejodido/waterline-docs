@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # One-to-Many Associations
 
 A one-to-many association states that a model can be associated with many other models. To build this

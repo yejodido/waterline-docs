@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Waterline
 
 Waterline provides an abstraction layer on top of your data-store, giving you easy access to query

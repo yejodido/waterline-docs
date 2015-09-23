@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Validations in Waterline Models
 
 Validations are handled by [Anchor](https://github.com/balderdashy/anchor) which is based off of

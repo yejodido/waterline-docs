@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Waterline Query Interface
 
 The Waterline Query Interface allows you to interact with your models the same way no matter which

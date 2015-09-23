@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Query Language
 
 The Waterline Query language is an object based criteria used to retrive the records from any of

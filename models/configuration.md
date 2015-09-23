@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Waterline Model Configuration
 
 ## Configuration

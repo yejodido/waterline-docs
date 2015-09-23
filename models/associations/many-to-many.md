@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Many-to-Many Associations
 
 A many-to-many association states that a model can be associated with many other models and vice-versa.

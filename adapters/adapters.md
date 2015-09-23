@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Creating Adapters for Waterline
 
 Adapters are the *glue* connecting waterline core to the different data stores. Adapters expose 

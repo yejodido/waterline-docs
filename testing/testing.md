@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Testing Waterline with automated tests
 
 ## Why testing is important

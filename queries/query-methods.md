@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Query Methods
 
 Every model in Waterline will have a set of query methods exposed on it to allow you to interact

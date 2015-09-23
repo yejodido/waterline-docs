@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Instance and Class Methods in Waterline Models
 
 * [Instance methods](#instance-methods)

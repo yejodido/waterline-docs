@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Lifecycle Callbacks
 
 Lifecycle callbacks are functions you can define to run at certain times in a query. They are hooks

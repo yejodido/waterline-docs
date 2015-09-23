@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Waterline Models
 
 Models represent a structure of data which requires persistent storage. The data may live in any

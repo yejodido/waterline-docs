@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Waterline examples and tutorials
 
 * [Getting started code](src/getting-started.js)

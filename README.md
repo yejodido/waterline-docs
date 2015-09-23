@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Waterline v0.10 Documentation
 
 ## Table of Contents

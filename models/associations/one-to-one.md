@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # One-to-One Associations
 
 A one-to-one association states that a model may only be associated with one other model. In order

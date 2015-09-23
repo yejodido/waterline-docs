@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Waterline Associations
 
 With Waterline you can associate models with other models across all data stores. This means that
