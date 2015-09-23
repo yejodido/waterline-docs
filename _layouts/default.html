@@ -48,24 +48,27 @@
     }
   </style>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
   <script>
     $(function() {
-      var $sidebar   = $("#sidebar"),
-        $window    = $(window),
-        offset     = $sidebar.offset(),
-        topPadding = 15;
+      if (Modernizr.mq('(min-width: 992px)')) {
+        var $sidebar   = $("#sidebar"),
+          $window    = $(window),
+          offset     = $sidebar.offset(),
+          topPadding = 15;
 
-      $window.scroll(function() {
-        if ($window.scrollTop() > offset.top) {
-          $sidebar.stop().animate({
-            marginTop: $window.scrollTop() - offset.top + topPadding
-          });
-        } else {
-          $sidebar.stop().animate({
-            marginTop: 0
-          });
-        }
-      });
+        $window.scroll(function() {
+          if ($window.scrollTop() > offset.top) {
+            $sidebar.stop().animate({
+              marginTop: $window.scrollTop() - offset.top + topPadding
+            });
+          } else {
+            $sidebar.stop().animate({
+              marginTop: 0
+            });
+          }
+        });
+      }
     });
   </script>
 </head>
