@@ -1,0 +1,10 @@
+source:       .
+destination:  ./_site
+plugins_dir:  ./_plugins
+layouts_dir:  ./_layouts
+data_dir:     ./_data
+includes_dir: ./_includes
+collections:  null
+markdown:     kramdown
+highlighter:  rouge
+permalink:    /:title
