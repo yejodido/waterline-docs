@@ -6,7 +6,7 @@ layout: default
 
 ## Example Ontology
 
-```javascript
+{% highlight javascript %}
 // User.js
 module.exports = {
   connection: 'ourMySQL',
@@ -18,10 +18,10 @@ module.exports = {
     }
   }
 };
-```
+{% endhighlight %}
 
 
-```javascript
+{% highlight javascript %}
 // Product.js
 module.exports = {
   connection: 'ourRedis',
@@ -33,7 +33,7 @@ module.exports = {
     }
   }
 };
-```
+{% endhighlight %}
 
 ### The Problem
 
@@ -59,7 +59,7 @@ We address this through the concept of "dominance."  In any cross-adapter model 
 Here's the ontology again, but this time we'll indicate the MySQL database as the "dominant".  This means that the "ProductUser" relationship "table" will be stored as a MySQL table.
 
 
-```javascript
+{% highlight javascript %}
 // User.js
 module.exports = {
   connection: 'ourMySQL',
@@ -72,10 +72,10 @@ module.exports = {
     }
   }
 };
-```
+{% endhighlight %}
 
 
-```javascript
+{% highlight javascript %}
 // Product.js
 module.exports = {
   connection: 'ourRedis',
@@ -87,7 +87,7 @@ module.exports = {
     }
   }
 };
-```
+{% endhighlight %}
 
 
 ## Choosing a "dominant"

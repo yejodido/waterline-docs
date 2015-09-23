@@ -40,7 +40,7 @@ key factory or attribute.
 Each model will also get two timestamp attributes added by default: `createdAt` and `updatedAt` which
 will track when a record went into the datastore and when it was last updated.
 
-```javascript
+{% highlight javascript %}
 var Person = Waterline.Collection.extend({
 
   // Identity is a unique name for this model and must be in lower case
@@ -61,12 +61,12 @@ var Person = Waterline.Collection.extend({
 });
 
 module.exports = Person;
-```
+{% endhighlight %}
 
 You can also set options for each attribute. These include `validations` and any indexing or unique
 properties.
 
-```javascript
+{% highlight javascript %}
 var Person = Waterline.Collection.extend({
 
   identity: 'person',
@@ -105,7 +105,7 @@ var Person = Waterline.Collection.extend({
     }
   }
 });
-```
+{% endhighlight %}
 
 ## Using an existing database
   
@@ -115,7 +115,7 @@ It is **extremely important** to set the `migrate` property to `safe` in your mo
 
 In this example, the WB Company has prefixed all of their fields with `wb_`. You'll notice that you can use the `tableName` attribute, but also `columnName` in the `attributes` object.
 
-```javascript
+{% highlight javascript %}
 var Widget = Waterline.Collection.extend({
   identity: 'wbwidget',
   connection: 'wb-widget-database',
@@ -140,7 +140,7 @@ var Widget = Waterline.Collection.extend({
     autoUpdatedAt: false,
   }
 });
-```
+{% endhighlight %}
 In addition, settings for automatically generating the primary key field (`autoPK`), the created timestamp (`autoCreatedAt`), and the modified timestamp (`autoUpdatedAt`) are disabled in this example because either the model specifies them specifically, or they are actually absent from the existing database table.
 
 ## Model property summary

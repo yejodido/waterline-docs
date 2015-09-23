@@ -14,13 +14,13 @@ is synced with the datastore and allows you to turn off default behaviour.
 A required property on each model which describes the name of the model. This must be unique per
 instance of Waterline and it must be in lower case.
 
-```javascript
+{% highlight javascript %}
 var Foo = Waterline.Collection.extend({
 
   identity: 'foo'
 
 });
-```
+{% endhighlight %}
 
 #### connection
 
@@ -33,7 +33,7 @@ So for example if you defined connections using both `sails-postgresql` and `sai
 `sails-mandrill` adapter exposes a `send` method your model will contain all the CRUD methods exposed
 from `sails-postgresql` as well as a `send` method which will be run on the mandrill adapter.
 
-```javascript
+{% highlight javascript %}
 // String Format
 var Foo = Waterline.Collection.extend({
 
@@ -49,13 +49,13 @@ var Bar = Waterline.Collection.extend({
   connection: ['my-local-postgresql', 'sails-mandrill']
 
 });
-```
+{% endhighlight %}
 
 #### migrate
 
 Sets the schema to automatically `alter` the schema, `drop` the schema or make no changes (`safe`). Default: `alter`
 
-```javascript
+{% highlight javascript %}
 var Foo = Waterline.Collection.extend({
 
   identity: 'foo',
@@ -63,7 +63,7 @@ var Foo = Waterline.Collection.extend({
   migrate: 'alter',
   // ...
 });
-```
+{% endhighlight %}
 
 It is **extremely important** to set the `migrate` property to `safe` in your models when working with existing databases. If you do not to this, you will very likely **lose data** and do other terrible things as it tries to automatically adjust the schema.
 
@@ -73,7 +73,7 @@ A flag to toggle the automatic primary key generation. Default: `true`.
 
 If turned off no primary key will be created by default and one will need to be defined.
 
-```javascript
+{% highlight javascript %}
 var Foo = Waterline.Collection.extend({
 
   identity: 'foo',
@@ -82,13 +82,13 @@ var Foo = Waterline.Collection.extend({
   autoPK: false,
   // ...
 });
-```
+{% endhighlight %}
 
 #### autoCreatedAt
 
 A flag to toggle the automatic timestamp for createdAt. Default: `true`.
 
-```javascript
+{% highlight javascript %}
 var Foo = Waterline.Collection.extend({
 
   identity: 'foo',
@@ -97,7 +97,7 @@ var Foo = Waterline.Collection.extend({
   autoCreatedAt: false,
   // ...
 });
-```
+{% endhighlight %}
 
 Note that if this flag is set and the `createdAt` property is supplied on create that value will be used to create the record in the data store.
 
@@ -105,7 +105,7 @@ Note that if this flag is set and the `createdAt` property is supplied on create
 
 A flag to toggle the automatic timestamp for updatedAt. Default: `true`.
 
-```javascript
+{% highlight javascript %}
 var Foo = Waterline.Collection.extend({
 
   identity: 'foo',
@@ -114,7 +114,7 @@ var Foo = Waterline.Collection.extend({
   autoUpdatedAt: false,
   // ...
 });
-```
+{% endhighlight %}
 
 Note that if this flag is set and the `updatedAt` property is supplied on update, that value will be used to create the record in the data store.
 
@@ -127,7 +127,7 @@ defined in the model's attributes object will be allowed to be stored.
 For adapters that don't require a schema such as Mongo or Redis the default setting is to be
 schemaless.
 
-```javascript
+{% highlight javascript %}
 var Foo = Waterline.Collection.extend({
 
   identity: 'foo',
@@ -136,14 +136,14 @@ var Foo = Waterline.Collection.extend({
   schema: true,
   // ...
 });
-```
+{% endhighlight %}
 
 #### tableName
 
 You can define a custom table or collection name on your adapter by adding a `tableName` attribute. If no table
 name is supplied it will use the identity as the table name when passing it to an adapter.
 
-```javascript
+{% highlight javascript %}
 var Foo = Waterline.Collection.extend({
 
   identity: 'foo',
@@ -152,4 +152,4 @@ var Foo = Waterline.Collection.extend({
   tableName: 'my-legacy-table-name',
   // ...
 });
-```
+{% endhighlight %}

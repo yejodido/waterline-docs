@@ -31,21 +31,21 @@ can be chained together to create complex queries.
 See [Query Language](query-language.md) for more information on the options available in the
 query language.
 
-```javascript
+{% highlight javascript %}
 User.find()
 .where({ name: { contains: 'foo' }})
 .populate('animals', { type: 'dog', limit: 10 })
 .skip(20)
 .limit(10)
 .exec(function(err, users) {});
-```
+{% endhighlight %}
 
 For convience, promises are supported if you choose to use them. Promises use the [Bluebird library](https://github.com/petkaantonov/bluebird),
 so anything you do after the first then call (or spread, or catch), will be a complete Bluebird promise
 object. Remember, you must end the query somehow (by calling then or one of the other functions)
 in order to complete the database request.
 
-```javascript
+{% highlight javascript %}
 User.findOne()
 .where({ id: 2 })
 .then(function(user){
@@ -61,7 +61,7 @@ User.findOne()
 .catch(function(err){
   // An error occured
 });
-```
+{% endhighlight %}
 
 ### .where()
 
@@ -73,11 +73,11 @@ using any of the supported [Query Language](query-language.md).
 |  Criteria Object    |      `{}`           | Yes        |
 
 
-```javascript
+{% highlight javascript %}
 User.find()
 .where({ name: { startsWith: 'w' }})
 .exec(function(err, results) {});
-```
+{% endhighlight %}
 
 ### .populate()
 
@@ -91,19 +91,19 @@ to filter associations and run `limit` and `skip` on the results.
 |  Attribute Name     |      `string`       | Yes        |
 |  Criteria Object    |      `{}`           | No         |
 
-```javascript
+{% highlight javascript %}
 // Simple Population
 User.find()
 .populate('foo')
 .exec(function(err, users) {});
-```
+{% endhighlight %}
 
-```javascript
+{% highlight javascript %}
 // Collection Filtering
 User.find()
 .populate('foo', { type: 'bar', limit: 20 })
 .exec(function(err, users) {});
-```
+{% endhighlight %}
 
 ### .limit()
 
@@ -113,11 +113,11 @@ User.find()
 |---------------------|---------------------|------------|
 |  Number to Return   |      `int`          | Yes        |
 
-```javascript
+{% highlight javascript %}
 User.find()
 .limit(10)
 .exec(function(err, users) {});
-```
+{% endhighlight %}
 
 ### .skip()
 
@@ -127,11 +127,11 @@ User.find()
 |---------------------|---------------------|------------|
 |  Number to Skip     |      `int`          | Yes        |
 
-```javascript
+{% highlight javascript %}
 User.find()
 .skip(10)
 .exec(function(err, users) {});
-```
+{% endhighlight %}
 
 ### .paginate()
 
@@ -139,21 +139,21 @@ When `skip` and `limit` are put together they create the ability to paginate thr
 would for pages. For example, if I wanted 'page 2' of a given record set, and I only want to see 10
 records at a time, I know that I need to `skip(10)` and `limit(10)` like so:
 
-```javascript
+{% highlight javascript %}
 User.find()
 .skip(10)
 .limit(10)
 .exec(function(err, users) {});
-```
+{% endhighlight %}
 
 But, while we are thinking in terms of pagination, or pages, it might be easier to use the
 paginate helper:
 
-```javascript
+{% highlight javascript %}
 User.find()
 .paginate({ page: 2, limit: 10 })
 .exec(function(err, users) {});
-```
+{% endhighlight %}
 
 Paginate has several options:
 
@@ -167,12 +167,12 @@ Paginate has several options:
 `sort` will return a sorted set of values. Simply specify an attribute name for natural (ascending)
 sort, or specify an `asc` or `desc` flag for ascending or descending orders respectively.
 
-```javascript
+{% highlight javascript %}
 User.find()
 .sort('roleId asc')
 .sort({ createdAt: 'desc' })
 .exec(function(err, users) {});
-```
+{% endhighlight %}
 
 ### .exec()
 
@@ -183,7 +183,7 @@ method in the chain.
 |---------------------|---------------------|------------|
 |  Callback           |      `function`     | Yes        |
 
-```javascript
+{% highlight javascript %}
 User.find()
 .exec(function(err, users) {});
-```
+{% endhighlight %}
