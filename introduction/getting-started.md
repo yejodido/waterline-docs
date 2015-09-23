@@ -8,25 +8,25 @@ To get started with Waterline, we need main two ingredients -  adapters and mode
 
 The simplest adapter to use is the `sails-memory` adapter so let's install it and Waterline in an empty directory.
 
-```sh
+{% highlight bash %}
 $ npm install waterline sails-memory
-```
+{% endhighlight %}
 
 Now we want some sample code. Copy the code from the [`getting-started`](../examples/src/getting-started.js) into a file in the same directory where you installed the `waterline` and `sails-memory` packages.
 
 Before we run it, let's unpack how it works.
 
-```js
+{% highlight javascript %}
 var Waterline = require('waterline');
 var sailsMemoryAdapter = require('sails-memory');
 var waterline = new Waterline();
-```
+{% endhighlight %}
 
 Here we are simply bootstrapping our main objects. We are setting up the `Waterline` factory object, and instance of an adapter and an instance of `waterline` itself.
 
 Next, we define the specification for the user model, like so:
 
-```js
+{% highlight javascript %}
 var userCollection = Waterline.Collection.extend({
 	identity: 'user',
 	connection: 'default',
@@ -41,7 +41,7 @@ var userCollection = Waterline.Collection.extend({
 		}
 	}
 });
-```
+{% endhighlight %}
 
 What's important here is the object that we are passing into that factory method.
 
@@ -55,7 +55,7 @@ The `attributes` define the properties of the model. In a traditional database, 
 
 Obviously we now need to define what a pet is.
 
-```js
+{% highlight javascript %}
 var petCollection = Waterline.Collection.extend({
 	identity: 'pet',
 	connection: 'default',
@@ -70,7 +70,7 @@ var petCollection = Waterline.Collection.extend({
 		}
 	}
 });
-```
+{% endhighlight %}
 
 Most of the structure is same as for the user. However, the `owner` field specifies the owner of this pet.
 
@@ -78,16 +78,16 @@ Most of the structure is same as for the user. However, the `owner` field specif
 
 Next we have some more boring setup chores.
 
-```js
+{% highlight javascript %}
 waterline.loadCollection(userCollection);
 waterline.loadCollection(petCollection);
-```
+{% endhighlight %}
 
 Here we are adding the model specifications into the `waterline` instance itself.
 
 And last, but not least, we have to configure the storage connections.
 
-```js
+{% highlight javascript %}
 var config = {
 	adapters: {
 		'memory': sailsMemoryAdapter
@@ -99,13 +99,13 @@ var config = {
 		}
 	}
 };
-```
+{% endhighlight %}
 
 So here we specify the `adapters` we are going to use (one for each type of storage we are going to use), and the `connections` which will usually contain connection details for the target storage system (login details, file paths, etc). Each connection can be named, and in this case we've simply settled on "default" to name the connection.
 
 Ok, it's time to actually crank things up and work with the data store. First we need to initialise the `waterline` instance, and then we can go to work.
 
-```js
+{% highlight javascript %}
 waterline.initialize(config, function (err, ontology) {
 	if (err) {
 		return console.error(err);
@@ -136,7 +136,7 @@ waterline.initialize(config, function (err, ontology) {
 			console.error(err);
 		});
 });
-```
+{% endhighlight %}
 
 That's a fair chunk of code so let's unpack it slower.
 
@@ -162,7 +162,7 @@ Finally, we want to see what actually got stuffed into the database, so we use `
 
 Running that simple application gives us:
 
-```sh
+{% highlight bash %}
 $ node getting-started.js
 [ { pets:
      [ { breed: 'beagle',
@@ -177,7 +177,7 @@ $ node getting-started.js
     createdAt: Thu May 07 2015 20:44:37 GMT+1000 (AEST),
     updatedAt: Thu May 07 2015 20:44:37 GMT+1000 (AEST),
     id: 1 } ]
-```
+{% endhighlight %}
 
 Interesting. There are the attributes we gave the models, and we can also see the primary keys that were automatically generated for us. We can also see that waterline has thrown in some default `createdAt` and `updatedAt` timestamps too. Cool!
 

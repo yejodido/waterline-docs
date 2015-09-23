@@ -20,7 +20,7 @@ a password before creating or automatically generating a slugified url attribute
 If you want to encrypt a password before saving in the database you can use the `beforeCreate`
 lifecycle callback.
 
-```javascript
+{% highlight javascript %}
 var bcrypt = require('bcrypt');
 
 var User = Waterline.Collection.extend({
@@ -55,7 +55,7 @@ var User = Waterline.Collection.extend({
     });
   }
 });
-```
+{% endhighlight %}
 
 ## Callbacks on `update`
 
@@ -71,7 +71,7 @@ need to make sure that the record concerns a person of interest. You might want 
 `beforeValidation` lifecycle callback to see if the record's `citizen_id` exists in your
 `Probable_suspects` model.
 
-```javascript
+{% highlight javascript %}
 var User = Waterline.Collection.extend({
 
   identity: 'user',
@@ -99,7 +99,7 @@ var User = Waterline.Collection.extend({
     });
   }
 };
-```
+{% endhighlight %}
 
 Note that in the example above, the `Probable_suspects` would have had to be declared in the global scope (which is default behaviour when using Sails.js).
 
@@ -113,7 +113,7 @@ Note that in the example above, the `Probable_suspects` would have had to be dec
 You want to update a cache to remove a record after it has been destroyed. To do this you can use
 the `afterDestroy` lifecycle callback.
 
-```javascript
+{% highlight javascript %}
 var User = Waterline.Collection.extend({
 
   identity: 'user',
@@ -127,5 +127,5 @@ var User = Waterline.Collection.extend({
     Cache.sync(next);
   }
 };
-```
+{% endhighlight %}
 

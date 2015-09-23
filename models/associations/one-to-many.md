@@ -13,7 +13,7 @@ Because you may want a model to have multiple one-to-many associations on anothe
 is needed on the `collection` attribute. This states which `model` attribute on the one side of the
 association is used to populate the records.
 
-```javascript
+{% highlight javascript %}
 // A user may have many pets
 var User = Waterline.Collection.extend({
 
@@ -49,12 +49,12 @@ var Pet = Waterline.Collection.extend({
     }
   }
 });
-```
+{% endhighlight %}
 
 Now that the pets and users know about each other, they can be associated. To do this we can create
 or update a pet with the user's primary key for the `owner` value.
 
-```javascript
+{% highlight javascript %}
 Pet.create({
   breed: 'labrador',
   type: 'dog',
@@ -64,12 +64,12 @@ Pet.create({
   owner: 123
 })
 .exec(function(err, pet) {});
-```
+{% endhighlight %}
 
 Now that the `Pet` is associated with the `User`, all the pets belonging to a specific user can
 be populated by using the `populate` method.
 
-```javascript
+{% highlight javascript %}
 User.find()
 .populate('pets')
 .exec(function(err, users) {
@@ -89,4 +89,4 @@ User.find()
   //   }]
   // }]
 });
-```
+{% endhighlight %}
