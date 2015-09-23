@@ -5,6 +5,31 @@
   <!--bootstrap-->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.2.2/css/flat-ui.min.css">
+  <style>
+    .nav.navbar-nav li.active a {
+       color: #15ACC2;
+     }
+    .nav.navbar-nav li.active a:hover {
+      color: #15ACC2;
+    }
+    .nav.navbar-nav li a:hover, .nav.navbar-nav li a:focus {
+      color: #15ACC2;
+    }
+    .list-group a.active, .list-group a.active:focus{
+      background-color: #15ACC2;
+      border-color: #15ACC2;
+    }
+    .list-group a.active:hover{
+      background-color: #69CFDD;
+      border-color: #69CFDD;
+    }
+    a, a:focus {
+      color: #15ACC2;
+    }
+    a:hover {
+      color: #69CFDD;
+    }
+  </style>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <script>
     $(function() {
@@ -90,20 +115,20 @@
     <div class="col-md-2" id="sidebar">
 
       <div class="list-group">
-        <a href="#" class="list-group-item">
+        <a href="#" class="active list-group-item">
           Introduction
-        </a>
-        <a href="#" class="list-group-item">
-          Adapters
-        </a>
-        <a href="#" class="list-group-item">
-          Integration
         </a>
         <a href="#" class="list-group-item">
           Models
         </a>
         <a href="#" class="list-group-item">
           Queries
+        </a>
+        <a href="#" class="list-group-item">
+          Integration
+        </a>
+        <a href="#" class="list-group-item">
+          Adapters
         </a>
         <a href="#" class="list-group-item">
           Testing
