@@ -34,7 +34,7 @@ on the data.
 Will set a default value on an attribute if one is not supplied when the record is created. The supplied value can also be a
 function that waterline will run while creating the record.
 
-{% highlight javascript %}
+```javascript
 attributes: {
   phoneNumber: {
     type: 'string',
@@ -49,7 +49,7 @@ attributes: {
     }
   }
 }
-{% endhighlight %}
+```
 
 #### autoIncrement
 
@@ -57,28 +57,28 @@ Will create a new auto-incrementing attribute. These should always be of type `i
 not be supported in all datastores. For example MySQL will not allow more than one auto-incrementing
 column per table.
 
-{% highlight javascript %}
+```javascript
 attributes: {
   placeInLine: {
     type: 'integer',
     autoIncrement: true
   }
 }
-{% endhighlight %}
+```
 
 #### unique
 
 Ensures no two records will be allowed with the same value. This is a database level constraint so
 in most cases a unique index will be created in the underlying data-store.
 
-{% highlight javascript %}
+```javascript
 attributes: {
   username: {
     type: 'string',
     unique: true
   }
 }
-{% endhighlight %}
+```
 
 #### index
 
@@ -91,20 +91,20 @@ queries in a case insensitive manner we are unable to use the index on a string 
 some workarounds being discussed but nothing is implemented so far. This will be updated in the
 near future to fully support indexes on strings.
 
-{% highlight javascript %}
+```javascript
 attributes: {
   email: {
     type: 'string',
     index: true
   }
 }
-{% endhighlight %}
+```
 
 #### primaryKey
 
 Will set the primary key of the record. This should be used when `autoPK` is set to false.
 
-{% highlight javascript %}
+```javascript
 attributes: {
   uuid: {
     type: 'string',
@@ -112,34 +112,34 @@ attributes: {
     required: true
   }
 }
-{% endhighlight %}
+```
 
 #### enum
 
 A special validation property which will only allow values which match a whitelisted set of values.
 
-{% highlight javascript %}
+```javascript
 attributes: {
   state: {
     type: 'string',
     enum: ['pending', 'approved', 'denied']
   }
 }
-{% endhighlight %}
+```
 
 #### size
 
 If supported in the datastore, can be used to define the size of the attribute. For example in MySQL
 size can be used with a string to create a column with data type: `varchar(n)`.
 
-{% highlight javascript %}
+```javascript
 attributes: {
   name: {
     type: 'string',
     size: 24
   }
 }
-{% endhighlight %}
+```
 
 #### columnName
 
@@ -148,14 +148,14 @@ interface for interacting with your data at the application layer and the data l
 handy when integrating with legacy databases. You can have a nice API for your data and still allow
 the data to be saved in legacy columns.
 
-{% highlight javascript %}
+```javascript
 attributes: {
   name: {
     type: 'string',
     columnName: 'legacy_data_user_name'
   }
 }
-{% endhighlight %}
+```
 
 Be warned, that Waterline may implement more keywords in the future which would conflict with any custom keywords in your application.
 

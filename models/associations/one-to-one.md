@@ -12,7 +12,7 @@ Waterline uses the concept of a `model` attribute to indicate that a record shou
 to another model. Whenever this attribute is found a `foreignKey` will be built up in the underlying
 schema to handle the association.
 
-{% highlight javascript %}
+```javascript
 // A user may only have a single pet
 var User = Waterline.Collection.extend({
 
@@ -42,7 +42,7 @@ var Pet = Waterline.Collection.extend({
     name: 'string'
   }
 });
-{% endhighlight %}
+```
 
 In the above example we are associating a `Pet` with a `User`. The `User` may only have one `Pet` in
 this case but a `Pet` is not limited to a single `User`. Because we have only formed an association
@@ -50,7 +50,7 @@ on one of the models, a `Pet` has no restrictions on the number of `User` models
 We can change this and associate the `Pet` with exactly one `User` and the `User` with exactly one
 `Pet`.
 
-{% highlight javascript %}
+```javascript
 // A user may only have a single pet
 var User = Waterline.Collection.extend({
 
@@ -84,13 +84,13 @@ var Pet = Waterline.Collection.extend({
     }
   }
 });
-{% endhighlight %}
+```
 
 Now that both models know about each other you can query the association from both sides. To add an
 association to a model when creating a record you can use the named attribute you set in the model
 definition.
 
-{% highlight javascript %}
+```javascript
 Pet.create({
   breed: 'labrador',
   type: 'dog',
@@ -100,14 +100,14 @@ Pet.create({
   user: 123
 })
 .exec(function(err, pet) {});
-{% endhighlight %}
+```
 
 This will create a new `Pet` record with the `User` foreignKey set. It will allow you to query a `Pet`
 and also retrieve their owners but the `User` side of the association doesn't know about the `Pet`.
 To ensure you can query both ways the `User` record will need to be updated with the new `Pet` record.
 You can do this in many ways but a simple nested example may look like this:
 
-{% highlight javascript %}
+```javascript
 Pet.create({
   breed: 'labrador',
   type: 'dog',
@@ -122,14 +122,14 @@ Pet.create({
   User.update(123, { pet: pet.id }).exec(function(err, user) {});
 
 });
-{% endhighlight %}
+```
 
 Now that the associations are created you can query the records and include the associated data. To
 do this the `populate` option is used. This will add a key to each model returned that contains an
 object with the corresponding record. Because we set the association on both sides above you could
 use `populate` on either side.
 
-{% highlight javascript %}
+```javascript
 Pet.find()
 .populate('user')
 .exec(function(err, pets) {
@@ -149,13 +149,13 @@ Pet.find()
   // }]
 
 });
-{% endhighlight %}
+```
 ## One-to-One with Existing Tables
 
 These one-to-one relationships will also work if you're using a legacy database. You'll have to specify a `tableName` attribute, along with appropriate `columnName`s for each field attribute.
 
 In this example, PetBiz prefixes all of their tables and fields with `pb_`. So the Pet model becomes:
-{% highlight javascript %}
+```javascript
 var Pet = Waterline.Collection.extend({
 
   identity: 'pet',
@@ -186,9 +186,9 @@ var Pet = Waterline.Collection.extend({
     }
   }
 });
-{% endhighlight %}
+```
 Meanwhile, the `User` would look something like this:
-{% highlight javascript %}
+```javascript
 var User = Waterline.Collection.extend({
 
   identity: 'user',
@@ -215,6 +215,6 @@ var User = Waterline.Collection.extend({
     }
   }
 });
-{% endhighlight %}
+```
 With just these minor changes to the model, the queries described earlier should work the same.
 
