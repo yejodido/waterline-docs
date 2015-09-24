@@ -41,7 +41,7 @@ If you are interested in code coverage, you might also like to research a tool c
 
 The following example illustrates how you might attempt to test a Waterline model. It assumes the following, and extremely simple, application structure:
 
-```none
+```
 root
 |- models
 |  |- Pet.js

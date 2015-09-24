@@ -6,10 +6,47 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.2.2/css/flat-ui.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+  <script>
+    $(function() {
+      if (Modernizr.mq('(min-width: 992px)')) {
+        var $sidebar   = $("#sidebar"),
+          $window    = $(window),
+          offset     = $sidebar.offset(),
+          topPadding = 15;
+
+        $window.scroll(function() {
+          if ($window.scrollTop() > offset.top) {
+            $sidebar.stop().animate({
+              marginTop: $window.scrollTop() - offset.top + topPadding
+            });
+          } else {
+            $sidebar.stop().animate({
+              marginTop: 0
+            });
+          }
+        });
+      }
+    });
+
+    $(function() {
+      $('div.list-group a[href^="/' + location.pathname.split("/")[1] + '"]').addClass('active');
+    });
+  </script>
   <style>
+
+    .navbar-default .navbar-toggle:hover:before {
+      color: #15ACC2;
+    }
+
+    .navbar-default .navbar-toggle:focus:before {
+      color: #15ACC2;
+    }
+
     .nav.navbar-nav li.active a {
-       color: #15ACC2;
-     }
+      color: #15ACC2;
+    }
     .nav.navbar-nav li.active a:hover {
       color: #15ACC2;
     }
@@ -110,34 +147,6 @@
     .highlight .vi { color: #008080 } /* Name.Variable.Instance */
     .highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
   </style>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-  <script>
-    $(function() {
-      if (Modernizr.mq('(min-width: 992px)')) {
-        var $sidebar   = $("#sidebar"),
-          $window    = $(window),
-          offset     = $sidebar.offset(),
-          topPadding = 15;
-
-        $window.scroll(function() {
-          if ($window.scrollTop() > offset.top) {
-            $sidebar.stop().animate({
-              marginTop: $window.scrollTop() - offset.top + topPadding
-            });
-          } else {
-            $sidebar.stop().animate({
-              marginTop: 0
-            });
-          }
-        });
-      }
-    });
-
-    $(function() {
-      $('div.list-group a[href^="/' + location.pathname.split("/")[1] + '"]').addClass('active');
-    });
-  </script>
 </head>
 <body>
 <!-- Begin Body -->
@@ -185,7 +194,6 @@
 		C256.5,39.4,255.8,37.9,254.4,36.9z"/>
 </g>
 </svg>
-
     </div>
     <div class="collapse navbar-collapse navbar-right" id="navbar-collapse-01">
       <ul class="nav navbar-nav">
