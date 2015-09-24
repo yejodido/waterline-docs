@@ -36,6 +36,25 @@
   </script>
   <style>
 
+    .nav-pills li.active a{
+      color: #15ACC2;
+      background-color: initial;
+      border-bottom: 3px solid #15ACC2;
+      border-radius: 0;
+    }
+    .nav-pills li.active a:hover{
+      color: #15ACC2;
+      background-color: initial;
+      border-bottom: 3px solid #15ACC2;
+      border-radius: 0;
+    }
+    .nav-pills li.active a:focus{
+      color: #15ACC2;
+      background-color: initial;
+      border-bottom: 3px solid #15ACC2;
+      border-radius: 0;
+    }
+
     .navbar-default .navbar-toggle:hover:before {
       color: #15ACC2;
     }
@@ -234,7 +253,13 @@
       </div>
 
     </div>
-    <div class="col-md-10">{{content}}</div>
+    <div class="col-md-10">
+      <ul class="nav nav-pills">
+        <li role="presentation" class="active"><a href="#">Main Item</a></li>
+        <li role="presentation"><a href="#">Language</a></li>
+      </ul>
+      {{content}}
+    </div>
   </div>
   <div id="footer">
     <div class="container text-center">
