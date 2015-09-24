@@ -4,6 +4,7 @@ plugins_dir:  ./_plugins
 layouts_dir:  ./_layouts
 data_dir:     ./_data
 includes_dir: ./_includes
+baseurl: /waterline-docs
 collections:  null
 markdown: redcarpet
 markdown_ext:  markdown,mkdown,mkdn,mkd,md
