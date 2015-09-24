@@ -31,7 +31,9 @@
     });
 
     $(function() {
-      $('div.list-group a[href^="/' + location.pathname.split("/")[1] + '"]').addClass('active');
+      if (location.pathname.split("/")[1]) {
+        $('div.list-group a[href^="/' + location.pathname.split("/")[1] + '"]').addClass('active');
+      }
     });
   </script>
   <style>
