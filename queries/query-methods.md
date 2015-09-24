@@ -30,10 +30,10 @@ using the [Query Language](query-language.md).
 |   Find Criteria    |   `{}`,`[{}]`, `string`, `int`  |   Yes      |
 |     Callback       |   `function`                    |   No       |
 
-{% highlight javascript %}
+```javascript
 User.find({ name: 'Walter Jr' })
 .exec(function(err, users) {});
-{% endhighlight %}
+```
 
 ##### Notes
 
@@ -52,10 +52,10 @@ User.find({ name: 'Walter Jr' })
 |   Find Criteria    |   `{}`,`[{}]`, `string`, `int`  |   Yes      |
 |     Callback       |   `function`                    |   No       |
 
-{% highlight javascript %}
+```javascript
 User.findOne({ name: 'Walter Jr' })
 .exec(function(err, user) {});
-{% endhighlight %}
+```
 
 ##### Notes
 > Any string arguments passed must be the ID of the record.
@@ -73,12 +73,12 @@ validations it will be sent to the adapters `create` method.
 |  Records to Create  |      `{}`, `[{}]`   | Yes        |
 |     Callback        | `function`          | No         |
 
-{% highlight javascript %}
+```javascript
 User.create({
   name: 'Walter Jr'
 })
 .exec(function(err, user) {});
-{% endhighlight %}
+```
 
 
 
@@ -93,13 +93,13 @@ using the [Query Language](query-language.md).
 |   Creation Values   |   `{}`,`[{}]`                   |   No      |
 |     Callback       |   `function`                    |   No       |
 
-{% highlight javascript %}
+```javascript
 User.findOrCreate({ name: 'Walter Jr' })
 .exec(function(err, users) {
 //either user(s) with the name 'Walter Jr' get returned or 
 //a single user gets created with the name 'Walter Jr' and returned
 });
-{% endhighlight %}
+```
 
 ##### Notes
 > Any string arguments passed must be the ID of the record.
@@ -125,10 +125,10 @@ using the [Query Language](query-language.md).
 |   Updated Values   |   `{}`,`[{}]`                   |   Yes      |
 |     Callback       |   `function`                    | No         |
 
-{% highlight javascript %}
+```javascript
 User.update({ name: 'Walter Jr' }, { name: 'Flynn' })
 .exec(function(err, users) {});
-{% endhighlight %}
+```
 
 ##### Notes
 > Although you may pass `.update()` an object or an array of objects, it will always return an array of objects.
@@ -147,10 +147,10 @@ using the [Query Language](query-language.md).
 |   Find Criteria    |   `{}`,`[{}]`, `string`, `int`  |   Yes      |
 |     Callback       |   `function`                    |   No       |
 
-{% highlight javascript %}
+```javascript
 User.destroy({ name: 'Flynn' })
 .exec(function(err) {});
-{% endhighlight %}
+```
 
 ##### Notes
 > If you want to confirm the record exists before you delete it, you must first perform a find().
@@ -168,7 +168,7 @@ Some adapters, such as [sails-mysql](https://github.com/balderdashy/sails-mysql)
 |     Data           |   `array`                       |   No       |
 |     Callback       |   `function`                    |   Yes      |
 
-{% highlight javascript %}
+```javascript
 var title = "The King's Speech";
 Movie.query('SELECT * FROM movie WHERE title = $1', [title], function(err, results) {
   // using sails-postgresql
@@ -177,7 +177,7 @@ Movie.query('SELECT * FROM movie WHERE title = $1', [title], function(err, resul
   // using sails-mysql
   console.log('Found the following movie: ', results[0]);
 });
-{% endhighlight %}
+```
 
 ##### Notes
 > The type of the results returned depend on your adapter: sails-mysql returns an array of objects and sails-postgresql returns an object containing metadata and the actual results within a 'rows' array.
