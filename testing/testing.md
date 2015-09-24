@@ -31,9 +31,9 @@ The most practical of the two for Waterline are integration tests. Models are pa
 
 To run the tests we need a testing framework. There are a few around but for our examples we will be using [Mocha](mochajs.org). It's best to install this on the command line like so:
 
-{% highlight javascript %}
+```js
 $ npm install -g mocha
-{% endhighlight %}
+```
 
 If you are interested in code coverage, you might also like to research a tool called [Istanbul](https://www.npmjs.com/package/istanbul). For spying, stubbing, and mocking [Sinon](http://sinonjs.org) is a good choice. For simulating HTTP requests, [nock](https://www.npmjs.com/package/nock) is worth a look.
 
@@ -41,7 +41,7 @@ If you are interested in code coverage, you might also like to research a tool c
 
 The following example illustrates how you might attempt to test a Waterline model. It assumes the following, and extremely simple, application structure:
 
-{% highlight text %}
+```none
 root
 |- models
 |  |- Pet.js
@@ -49,13 +49,13 @@ root
 `- test
    |- mocha.opts
    `- UserModelTest.js
-{% endhighlight %}
+```
 
 ### `Pet.js`
 
 Our standard example Pet model.
 
-{% highlight javascript %}
+```js
 module.exports = {
 
   identity: 'pet',
@@ -72,13 +72,13 @@ module.exports = {
     }
   }
 };
-{% endhighlight %}
+```
 
 ### `User.js`
 
 Our standard example User model.
 
-{% highlight javascript %}
+```js
 module.exports = {
 
   identity: 'user',
@@ -95,16 +95,16 @@ module.exports = {
     }
   }
 };
-{% endhighlight %}
+```
 
 ### `mocha.opts`
 
 Here we are telling Mocha to recurse into the `test` directory to find all the tests in all sub-folders. We are also telling Mocha to load the wrappers for the TDD interface. This uses `suite` and `test` instead of the BDD style `describe` and `it` respectively. Some developers may find the TDD style more familiar. By using this setting, you can actually use both in your tests (just be consistent per file at least).
 
-{% highlight javascript %}
+```js
 --recursive
 --ui tdd
-{% endhighlight %}
+```
 
 ### `UserModelTest.js`
 
@@ -118,7 +118,7 @@ Finally we get to our test method that is just trying to create a user and make 
 
 Obviously there is a lot of scope to refactor the code into a utility library as you at more and more test files for your models.
 
-{% highlight javascript %}
+```js
 var assert = require('assert');
 var Waterline = require('waterline');
 var sailsMemoryAdapter = require('sails-memory');
@@ -182,11 +182,11 @@ suite('UserModel', function () {
 			});
 	});
 });
-{% endhighlight %}
+```
 
 All we have to to is run the tests:
 
-{% highlight bash %}
+```sh
 $ mocha
 
 
@@ -195,6 +195,6 @@ $ mocha
 
 
   1 passing (83ms)
-{% endhighlight %}
+```
 
 Whoot! It works.

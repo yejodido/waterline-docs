@@ -13,7 +13,7 @@ layout: default
 You can attach instance methods to a model which will be available on any record returned from a
 query. These are defined as functions in your model attributes.
 
-{% highlight javascript %}
+```javascript
 var User = Waterline.Collection.extend({
 
   identity: 'user',
@@ -27,7 +27,7 @@ var User = Waterline.Collection.extend({
     }
   }
 });
-{% endhighlight %}
+```
 
 ### toObject/toJSON
 
@@ -39,7 +39,7 @@ you to override the toJSON() method in your model.
 
 Example of filtering a password in your model definition:
 
-{% highlight javascript %}
+```javascript
 var User = Waterline.Collection.extend({
 
   identity: 'user',
@@ -57,7 +57,7 @@ var User = Waterline.Collection.extend({
     }
   }
 });
-{% endhighlight %}
+```
 
 ## Class Methods
 
@@ -67,7 +67,7 @@ a Waterline instance has been initialized.
 These are useful if you would like to keep model logic in the model and have reusable functions
 available.
 
-{% highlight javascript %}
+```javascript
 var Foo = Waterline.Collection.extend({
 
   identity: 'foo',
@@ -82,4 +82,4 @@ var Foo = Waterline.Collection.extend({
 
 // Example
 Foo.method1()
-{% endhighlight %}
+```

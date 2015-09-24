@@ -6,15 +6,15 @@ layout: default
 
 Waterline is available via NPM.
 
-{% highlight bash %}
+```sh
 $ npm install --save waterline
-{% endhighlight %}
+```
 Waterline ships without any adapters, so you will need to install these separately. For example:
 
-{% highlight bash %}
+```sh
 $ npm install --save sails-mysql
 $ npm install --save-dev sails-memory
-{% endhighlight %}
+```
 
 You can install any number of adapters into your application.
 

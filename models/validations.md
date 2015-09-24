@@ -17,7 +17,7 @@ value to test against.
 
 Available validations are:
 
-{% highlight javascript %}
+```javascript
 attributes: {
   foo: {
     empty: true,
@@ -73,11 +73,11 @@ attributes: {
     maxLength: 24
   }
 }
-{% endhighlight %}
+```
 
 Validations can also be defined as functions, either sync or async.
 
-{% highlight javascript %}
+```javascript
 attributes: {
   website: {
     type: 'string',
@@ -88,11 +88,11 @@ attributes: {
     }
   }
 }
-{% endhighlight %}
+```
 
 Validations can also be used against other attributes using the `this` context.
 
-{% highlight javascript %}
+```javascript
 attributes: {
   startDate: {
     type: 'date',
@@ -108,7 +108,7 @@ attributes: {
     }
   }
 }
-{% endhighlight %}
+```
 
 ## Validation rules
 
@@ -179,7 +179,7 @@ You can define your own types and their validation with the `types` object. It's
 and compare values to other attributes. This allows you to move validation business logic into your
 models and out of your controller logic.
 
-{% highlight javascript %}
+```javascript
 var User = Waterline.Collection.extend({
   types: {
     point: function(latlng){
@@ -214,14 +214,14 @@ var User = Waterline.Collection.extend({
     }
   }
 });
-{% endhighlight %}
+```
 
 ## Ignored Properties
 
 If you want to build custom functionality on top of Waterline models and you need to define custom model attribute properties, the Waterline validations will probably throw an error. If you know what you're doing, you can tell Waterline to ignore certain properties and not run validations for them (so this is different from custom validations).
 
 Example model:
-{% highlight javascript %}
+```javascript
 attributes: {
   email: {
     type: 'email',
@@ -233,4 +233,4 @@ attributes: {
     async: true // ignored by validation
   }
 }
-{% endhighlight %}
+```
