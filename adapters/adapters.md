@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: adapters
 ---
 
 # Creating Adapters for Waterline

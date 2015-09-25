@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: models
 ---
 
 # Instance and Class Methods in Waterline Models

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: integration
 ---
 
 # Integrating Waterline in Sails.js

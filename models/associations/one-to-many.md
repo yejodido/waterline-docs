@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: models
 ---
 
 # One-to-Many Associations

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: introduction
 ---
 
 # Getting started with Waterline

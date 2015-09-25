@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: models
 ---
 
 # Lifecycle Callbacks

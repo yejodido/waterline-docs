@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: models
 ---
 
 # Data Types and Attribute Properties in Waterline Models

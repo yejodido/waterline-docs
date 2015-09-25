@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: integration
 ---
 
 # Integrating Waterline with other frameworks
