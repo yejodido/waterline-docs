@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: introduction
 ---
 
 # New to [Node.js](https://soundcloud.com/marak/marak-the-node-js-rap)?

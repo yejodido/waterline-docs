@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: testing
 ---
 
 # Testing Waterline with automated tests

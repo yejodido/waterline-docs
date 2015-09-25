@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: models
 ---
 
 # Many-to-Many Through Associations
